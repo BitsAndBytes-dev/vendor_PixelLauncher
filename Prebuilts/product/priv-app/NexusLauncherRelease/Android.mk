@@ -30,11 +30,12 @@ else ifeq ($(PIXEL_LAUNCHER_VARIANT),fullmod2)
 LOCAL_SRC_FILES := NexusLauncherRelease12.apk
 else ifeq ($(PIXEL_LAUNCHER_VARIANT),nomod)
 LOCAL_SRC_FILES := NexusLauncherRelease00.apk
-
+else
+$(error Not set PIXEL_LAUNCHER_VARIANT, read more in vendor/PixelLauncher/REAMDE.md)
+endif
 LOCAL_PRODUCT_MODULE := true
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
-endif
